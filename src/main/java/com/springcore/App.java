@@ -19,12 +19,19 @@ public class App {
         StudentDAO temp =con.getBean("studentDao", StudentDAO.class);
 
         Student s = new Student();
-        s.setId(103);
-        s.setName("Rahul Soni");
-        s.setCity("Delhi");
 
-        int result = temp.insert(s);
+        //INSERT
+//        s.setId(103);
+//        s.setName("Rahul Soni");
+//        s.setCity("Delhi");
+//        int result = temp.insert(s);
+//        System.out.println("student added  : " + result);
 
-        System.out.println("student added  : " + result);
+        //UPDATE
+        s.setId(105);
+        s.setName("rohit kumar");
+        s.setCity("noida");
+        int res= temp.update(s);
+        System.out.println("rows updated : "+ res);
     }
 }
