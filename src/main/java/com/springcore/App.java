@@ -1,13 +1,30 @@
 package com.springcore;
 
+import com.springcore.dao.StudentDAO;
+import com.springcore.model.Student;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+    public static void main(String[] args) {
+        System.out.println("My program started");
+
+//        Spring jdbc -> jdbcTemplate
+        ApplicationContext con = new ClassPathXmlApplicationContext("config.xml");
+
+        StudentDAO temp =con.getBean("studentDao", StudentDAO.class);
+
+        Student s = new Student();
+        s.setId(103);
+        s.setName("Rahul Soni");
+        s.setCity("Delhi");
+
+        int result = temp.insert(s);
+
+        System.out.println("student added  : " + result);
     }
 }

@@ -1,9 +1,12 @@
-package com.springcore;
+package com.springcore.model;
 
 public class Student {
     private int id;
     private String name;
     private String city;
+
+    public Student() {
+    }
 
     public Student(int id, String name, String city) {
         this.id = id;

@@ -9,13 +9,17 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="ds">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/springjdbc"/>
         <property name="username" value="root"/>
-        <property name="passowrd" value="root@123"/>
+        <property name="password" value="root@123"/>
     </bean>
 
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
           p:dataSource-ref="ds"/>
+
+    <bean id="studentDao" class="com.springcore.dao.StudentDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
 
 </beans>
