@@ -28,10 +28,15 @@ public class App {
 //        System.out.println("student added  : " + result);
 
         //UPDATE
-        s.setId(105);
-        s.setName("rohit kumar");
-        s.setCity("noida");
-        int res= temp.update(s);
-        System.out.println("rows updated : "+ res);
+//        s.setId(105);
+//        s.setName("rohit kumar");
+//        s.setCity("noida");
+//        int res= temp.update(s);
+//        System.out.println("rows updated : "+ res);
+
+        //DELETE
+        int res= temp.delete(105);
+        System.out.println("student deleted : " + res);
+
     }
 }
