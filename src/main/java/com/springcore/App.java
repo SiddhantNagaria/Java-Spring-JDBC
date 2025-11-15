@@ -3,6 +3,7 @@ package com.springcore;
 import com.springcore.dao.StudentDAO;
 import com.springcore.model.Student;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -14,7 +15,7 @@ public class App {
         System.out.println("My program started");
 
 //        Spring jdbc -> jdbcTemplate
-        ApplicationContext con = new ClassPathXmlApplicationContext("config.xml");
+        ApplicationContext con = new AnnotationConfigApplicationContext(JdbcConfig.class);
 
         StudentDAO temp = con.getBean("studentDao", StudentDAO.class);
 
