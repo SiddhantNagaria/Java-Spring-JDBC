@@ -16,7 +16,7 @@ public class App {
 //        Spring jdbc -> jdbcTemplate
         ApplicationContext con = new ClassPathXmlApplicationContext("config.xml");
 
-        StudentDAO temp =con.getBean("studentDao", StudentDAO.class);
+        StudentDAO temp = con.getBean("studentDao", StudentDAO.class);
 
         Student s = new Student();
 
@@ -35,8 +35,11 @@ public class App {
 //        System.out.println("rows updated : "+ res);
 
         //DELETE
-        int res= temp.delete(105);
-        System.out.println("student deleted : " + res);
+//        int res= temp.delete(105);
+//        System.out.println("student deleted : " + res);
 
+        //SELECT BY ID
+        s = temp.getStudent(103);
+        System.out.println(s);
     }
 }
